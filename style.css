@@ -1,0 +1,429 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+
+:root {
+    --pink: #ff477e;
+    --light-pink: #ffb1ca;
+    --dark: #080307;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--dark);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            #451027 0%,
+            #190711 50%,
+            #080307 100%
+        );
+}
+
+/* PARTICLES */
+
+#particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* MUSIC BUTTON */
+
+.music-button {
+    position: fixed;
+    top: 30px;
+    right: 35px;
+    z-index: 10;
+
+    padding: 13px 22px;
+
+    border: 1px solid rgba(255, 105, 150, 0.6);
+    border-radius: 40px;
+
+    background: rgba(30, 5, 18, 0.8);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.music-button:hover {
+    background: #b51e50;
+    box-shadow: 0 0 25px #ff477e;
+    transform: scale(1.05);
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    z-index: 1;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero-content {
+    animation: appear 2s ease forwards;
+}
+
+.subtitle {
+    color: #e8a6bd;
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 8px;
+
+    margin-bottom: 25px;
+}
+
+.love-title {
+    font-size: clamp(100px, 20vw, 250px);
+    font-weight: 400;
+    letter-spacing: 10px;
+
+    text-shadow:
+        0 0 20px #ff477e,
+        0 0 50px #ff174f,
+        0 0 100px #a50e42;
+
+    animation: glow 3s infinite alternate;
+}
+
+.title-heart {
+    display: inline-block;
+    color: var(--pink);
+
+    animation: heartbeat 1.2s infinite;
+}
+
+.hero-description {
+    color: #e6b9c9;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.scroll-indicator {
+    margin-top: 100px;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: #d48ba7;
+
+    animation: float 2s infinite;
+}
+
+.scroll-arrow {
+    margin-top: 15px;
+    font-size: 24px;
+    color: var(--pink);
+}
+
+/* HEART SECTION */
+
+.heart-section {
+    height: 240vh;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+.heart-stage {
+    position: sticky;
+    top: 0;
+
+    height: 100vh;
+    width: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.heart-subtitle {
+    position: absolute;
+    top: 10%;
+
+    color: #e8a6bd;
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 6px;
+
+    text-align: center;
+}
+
+#heartFormation {
+    position: relative;
+
+    width: 600px;
+    height: 480px;
+
+    flex-shrink: 0;
+
+    transform: scale(var(--heart-scale, 1));
+    transform-origin: center;
+}
+
+/* INDIVIDUAL WORDS */
+
+.heart-word {
+    position: absolute;
+
+    white-space: nowrap;
+
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: #ff6c9d;
+
+    text-shadow:
+        0 0 8px #ff174f,
+        0 0 15px #ff477e;
+
+    pointer-events: none;
+    will-change: left, top, opacity, transform;
+}
+
+/* MESSAGE UNDER HEART */
+
+.heart-message {
+    position: absolute;
+    bottom: 7%;
+
+    text-align: center;
+}
+
+.heart-message p {
+    font-family: Arial, sans-serif;
+    color: #dba3b8;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.heart-message h2 {
+    margin-top: 12px;
+
+    color: var(--light-pink);
+    font-size: 25px;
+
+    letter-spacing: 5px;
+
+    text-shadow: 0 0 20px var(--pink);
+}
+
+/* FINAL SECTION */
+
+.final-section {
+    min-height: 100vh;
+
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.final-heart {
+    font-size: 100px;
+    color: var(--pink);
+
+    text-shadow: 0 0 50px #ff174f;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+.final-small {
+    margin-top: 35px;
+
+    font-family: Arial, sans-serif;
+    color: #d48ba7;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+.final-content h2 {
+    max-width: 700px;
+
+    margin: 25px auto;
+
+    font-size: clamp(25px, 5vw, 55px);
+    font-weight: 400;
+
+    color: var(--light-pink);
+}
+
+.final-message {
+    color: #dba3b8;
+    font-size: 17px;
+}
+
+.made-with-love {
+    margin-top: 100px;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+
+    color: #a66c80;
+}
+
+/* ANIMATIONS */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.2);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes glow {
+    from {
+        filter: brightness(0.8);
+    }
+
+    to {
+        filter: brightness(1.4);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .music-button {
+        top: 15px;
+        right: 15px;
+        font-size: 8px;
+    }
+
+    .subtitle {
+        letter-spacing: 4px;
+    }
+
+    .hero-description {
+        padding: 0 20px;
+        font-size: 14px;
+    }
+
+    .heart-subtitle {
+        letter-spacing: 3px;
+        font-size: 9px;
+    }
+
+    .heart-message p {
+        font-size: 10px;
+    }
+
+    .heart-message h2 {
+        font-size: 19px;
+    }
+
+    .final-content h2 {
+        font-size: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .title-heart,
+    .final-heart,
+    .hero-content {
+        animation: none;
+    }
+}

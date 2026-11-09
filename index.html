@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080307">
+
+    <title>LOVE.exe — A Little Something For You</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <audio id="music" loop>
+    <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Floating particles -->
+    <canvas id="particles"></canvas>
+
+    <!-- Music -->
+    <audio id="music" loop>
+        <source src="music/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music button -->
+    <button class="music-button" id="musicButton">
+        <span id="musicIcon">♫</span>
+        <span id="musicText">PLAY OUR SONG</span>
+    </button>
+
+    <!-- First screen -->
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <p class="subtitle">A LITTLE SOMETHING FOR YOU</p>
+
+            <h1 class="love-title">
+                L<span class="title-heart">♥</span>VE
+            </h1>
+
+            <p class="hero-description">
+                Some feelings are too beautiful for words.
+            </p>
+
+            <div class="scroll-indicator">
+                <span>SCROLL TO FEEL THE LOVE</span>
+                <div class="scroll-arrow">↓</div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Heart animation section -->
+    <section class="heart-section" id="heartSection">
+
+        <div class="heart-stage">
+
+            <div class="heart-content">
+
+                <p class="heart-subtitle">
+                    A THOUSAND WORDS, ONE FEELING
+                </p>
+
+                <div id="heartFormation"></div>
+
+                <div class="heart-message">
+                    <p>Every word means the same thing.</p>
+                    <h2>I LOVE YOU.</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Final screen -->
+    <section class="final-section">
+
+        <div class="final-content">
+
+            <div class="final-heart">♥</div>
+
+            <p class="final-small">AND IF WORDS WERE ENOUGH...</p>
+
+            <h2>I WOULD NEVER STOP SAYING IT.</h2>
+
+            <p class="final-message">
+                You are my favourite part of every story.
+            </p>
+
+            <div class="made-with-love">MADE WITH LOVE ♥</div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
